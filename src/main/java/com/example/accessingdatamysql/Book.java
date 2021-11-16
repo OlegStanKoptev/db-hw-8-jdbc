@@ -24,6 +24,17 @@ public class Book {
 	@Column(name = "pub_name")
 	private String pub_name;
 
+	@Column(name = "new_desc")
+	private String new_desc;
+
+	public String getNew_desc() {
+		return new_desc;
+	}
+
+	public void setNew_desc(String new_desc) {
+		this.new_desc = new_desc;
+	}
+
 	public String getIsbn() {
 		return isbn;
 	}
