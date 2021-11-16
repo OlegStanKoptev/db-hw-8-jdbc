@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller	// This means that this class is a Controller
-@RequestMapping(path="/books") // This means URL's start with /demo (after Application path)
+@Controller
+@RequestMapping(path="/books")
 public class MainController {
 	private final BookService bookService;
 
@@ -25,8 +25,8 @@ public class MainController {
 	}
 
 	@PostMapping
-	public void postBook(@RequestBody Book book) {
-		bookService.create(book);
+	public @ResponseBody Book postBook(@RequestBody Book book) {
+		return bookService.create(book);
 	}
 
 	@PatchMapping
